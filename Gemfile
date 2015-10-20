@@ -25,7 +25,7 @@ gem 'devise', '~> 3.5.2'
 
 gem "paperclip", "~> 4.3"
 
-gem 'aws-sdk', '~> 2.1', '>= 2.1.29'
+gem 'aws-sdk', '<2.0'
 
 group :development, :test do
 	gem 'sqlite3'
