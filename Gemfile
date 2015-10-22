@@ -36,6 +36,8 @@ gem 'will_paginate', '~> 3.0.6'
 
 gem 'will_paginate-bootstrap'
 
+gem 'acts-as-taggable-on', '~> 3.4'
+
 group :development, :test do
 	gem 'sqlite3'
 end

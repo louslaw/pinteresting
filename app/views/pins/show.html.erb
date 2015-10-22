@@ -8,7 +8,7 @@
 			</div>
 		<div class="panel-body">
 			<p><strong><%= @pin.user.name if @pin.user %></strong></p>
-			<p><%= @pin.string %></p>
+			<p><%= raw @pin.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></p>
 
 			<% if @pin.user == current_user %>
 				<%= link_to edit_pin_path(@pin) do %>
