@@ -1,5 +1,5 @@
 class PinsController < ApplicationController
-  before_action :set_pin, only: [:show, :edit, :update, :destroy]
+  before_action :set_pin, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index]
 
@@ -47,6 +47,11 @@ class PinsController < ApplicationController
   def destroy
     @pin.destroy
     redirect_to pins_url, notice: 'Pin was successfully destroyed.'
+  end
+
+  def upvote
+    @pin.upvote_by current_user
+    redirect_to :back
   end
 
   private

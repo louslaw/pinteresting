@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   get 'tags/:tag', to:'pins#index', as: :tag
-  resources :pins
+  resources :pins do
+    member do
+      put "like", to: "pins#upvote"
+    end
+  end
   devise_for :users
 root "pins#index"
 get "about" => "pages#about" #creates about_path
